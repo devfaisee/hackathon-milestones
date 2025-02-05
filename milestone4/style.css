@@ -1,89 +1,224 @@
-/* Styling form and resume sections */
+/* Qversity Color Palette */
+:root {
+    --primary: #004AAD;
+    --secondary: #FF6B00;
+    --background: #F8F9FA;
+    --card-bg: #FFFFFF;
+    --text: #212529;
+    --accent: #6C757D;
 
+    /* Hover Effects */
+    --primary-hover: #003680;
+    --secondary-hover: #D95A00;
+    --card-hover: #F1F3F5;
+    --testimonial-hover: #FFD4B5;
+}
+
+/* Global Styles */
 body {
-    font-family: 'Times New Roman', Times, serif;
-    margin: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    margin: 0;
     padding: 0;
-    background-color: rgb(232, 22, 22);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    overflow: auto; /* Make the page scrollable */
 }
 
-form {
-    margin: auto;
-    background-color: rgb(230, 235, 240);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+/* Resume Container */
+.resume-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 900px;
+    width: 100%;
+    background: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+/* Left Section */
+.left-section {
+    background: var(--primary);
+    color: white;
     padding: 20px;
-    max-width: 600px;
-}
-
-h1 {
     text-align: center;
-    color: rgb(75, 6, 248);
 }
 
-fieldset {
-    border: 2px solid rgb(148, 7, 242);
-    border-radius: 8px;
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-bottom: 10px;
+}
+
+.name {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.profession {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+/* Left Section Details */
+.left-section h3 {
+    font-size: 18px;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.left-section p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.left-section a {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Right Section */
+.right-section {
+    padding: 20px;
+}
+
+.right-section h3 {
+    color: var(--primary);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.right-section p,
+.right-section ul {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+/* Buttons */
+button {
+    background: var(--secondary);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin: 10px 5px;
+}
+
+button:hover {
+    background: var(--secondary-hover);
+}
+
+/* Form Container */
+.form-container {
+    max-width: 900px;
+    width: 100%;
+    background: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-bottom: 20px;
-    background-color: rgb(96, 215, 204);
 }
 
-legend {
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container label {
+    margin-bottom: 5px;
     font-weight: bold;
-    text-align: left;
-    color: rgb(34, 29, 29);
 }
 
-label {
-    display: block;
-    margin-top: 10px;
-    color: black;
-
-}
-
-input,textarea {
-    margin-top: 4px;
-    padding: 8px;
-    width: calc(100% - 1px);
-    border: 1px solid skyblue;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-button {
-    display: block;
-    width: 100%;
-    background-color: skyblue;
-    color: black;
-    border: none;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    margin-top: 10px;
-    font-size: 18px;
-    font-family: 'Times New Roman', Times, serif;
+.form-container input,
+.form-container textarea,
+.form-container select {
+    margin-bottom: 15px;
     padding: 10px;
-    cursor: pointer;
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+    font-size: 14px;
 }
 
-button :hover {
-    color: blue;
-}
-
+/* Resume Display */
 #resume-display {
-    max-width: 600px;
-    margin: auto;
+    max-width: 900px;
+    width: 100%;
+    background: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    border: 2px solid skyblue;
-    border-radius: 8px;
-    background-color: rgb(228, 242, 255);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    /* making the resume editable*/ 
-    outline: none;
+    margin-bottom: 20px;
 }
 
-#resume-display h2 {
-    color: black;
+/* Responsive Design */
+@media (min-width: 768px) {
+    .resume-container {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .left-section {
+        text-align: left;
+    }
 }
 
+@media (max-width: 767px) {
+    .left-section {
+        padding: 10px;
+    }
 
+    .profile-picture {
+        width: 80px;
+        height: 80px;
+    }
+
+    .name {
+        font-size: 18px;
+    }
+
+    .profession {
+        font-size: 14px;
+    }
+
+    .left-section h3 {
+        font-size: 16px;
+    }
+
+    .left-section p {
+        font-size: 12px;
+    }
+
+    .right-section {
+        padding: 10px;
+    }
+
+    .right-section h3 {
+        font-size: 18px;
+    }
+
+    .right-section p,
+    .right-section ul {
+        font-size: 12px;
+    }
+
+    button {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+}

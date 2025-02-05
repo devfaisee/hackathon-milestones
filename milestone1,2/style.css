@@ -1,84 +1,181 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 150px;
-}
-.left-section, .right-section {
-    padding: 20px;
-}
-.resume-container {
-    display: flex;
-   
-    background-color: white;
-    width: 80%;
-    margin: 0 auto;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+/* Qversity Color Palette */
+:root {
+    --primary: #004AAD;
+    --secondary: #FF6B00;
+    --background: #F8F9FA;
+    --card-bg: #FFFFFF;
+    --text: #212529;
+    --accent: #6C757D;
+
+    /* Hover Effects */
+    --primary-hover: #003680;
+    --secondary-hover: #D95A00;
+    --card-hover: #F1F3F5;
+    --testimonial-hover: #FFD4B5;
 }
 
-/* Left Section Styling */
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: auto; /* Make the page scrollable */
+}
+
+/* Resume Container */
+.resume-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 900px;
+    width: 100%;
+    background: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Left Section */
 .left-section {
-    background-color: #2c2c2c;
+    background: var(--primary);
     color: white;
     padding: 20px;
-    width: 35%;
     text-align: center;
-    border-right: 5px solid #f61e30;
 }
 
 .profile-picture {
-    width: 150px;
-    height: 150px;
-    margin-top: 10%;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    border: 5px solid #e6394745;
+    border: 3px solid white;
+    margin-bottom: 10px;
+}
+
+.name {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.profession {
+    font-size: 16px;
+    font-weight: 500;
     margin-bottom: 20px;
 }
 
-h1 {
-    font-size: 24px;
-    margin: 10px 0;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-h3 {
+/* Left Section Details */
+.left-section h3 {
     font-size: 18px;
-    padding: 2%;
-    margin: 20px 0 10px;
-    color: black;
-    border-radius: 10px;
-    box-shadow: 0 0 15px #e63946;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
 }
 
-ul {
-    list-style-type: fill round;
-    padding: 10;
-    margin: 10px 0;
-}
-
-ul li {
+.left-section p {
+    font-size: 14px;
     margin: 5px 0;
 }
 
-/* Right Section Styling */
-.right-section {
-    padding: 20px;
-    width: 65%;
+.left-section a {
+    color: white;
+    text-decoration: underline;
 }
 
+/* Right Section */
+.right-section {
+    padding: 20px;
+}
+
+.right-section h3 {
+    color: var(--primary);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.right-section p,
+.right-section ul {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+/* Buttons */
 button {
-    font-family: Arial, sans-serif;
-    border-radius: 10px;
-    box-shadow: 0 0 15px black;
+    background: var(--secondary);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
     cursor: pointer;
-    margin-top: 10px;
-    font-size: 18px;
+    transition: background 0.3s;
+    margin: 10px 5px;
 }
 
 button:hover {
-    background-color: #ff737c;
+    background: var(--secondary-hover);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .resume-container {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .left-section {
+        text-align: left;
+    }
+}
+
+@media (max-width: 767px) {
+    .left-section {
+        padding: 10px;
+    }
+
+    .profile-picture {
+        width: 80px;
+        height: 80px;
+    }
+
+    .name {
+        font-size: 18px;
+    }
+
+    .profession {
+        font-size: 14px;
+    }
+
+    .left-section h3 {
+        font-size: 16px;
+    }
+
+    .left-section p {
+        font-size: 12px;
+    }
+
+    .right-section {
+        padding: 10px;
+    }
+
+    .right-section h3 {
+        font-size: 18px;
+    }
+
+    .right-section p,
+    .right-section ul {
+        font-size: 12px;
+    }
+
+    button {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
 }
